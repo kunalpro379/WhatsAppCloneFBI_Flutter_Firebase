@@ -6,6 +6,8 @@ import 'package:whatsapp_FBI/common/widgets/custom_elevated_button.dart';
 import 'package:whatsapp_FBI/common/route/routes.dart'; // Correct import
 import 'package:whatsapp_FBI/features/User/Presentation/pages/login_page.dart';
 import 'package:whatsapp_FBI/features/User/welcome/widgets/privacyandterms.dart';
+
+import '../const/appconst.dart';
 //import 'lib/common/route/routes.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -166,12 +168,13 @@ class WelcomePage extends StatelessWidget {
                 const PrivacyAndTerms(),
                 CustomElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const LoginPage(),
+                    //   ),
+                    // );
+                    Navigator.pushNamed(context, PageConst.loginPage);
                   },
                   text: 'AGREE AND CONTINUE',
                   textStyle: TextStyle(),

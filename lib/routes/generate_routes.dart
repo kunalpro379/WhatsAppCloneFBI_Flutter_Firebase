@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_FBI/features/app/const/appconst.dart';
 import 'package:whatsapp_FBI/features/app/welcome/WelcomePage.dart';
 
+import '../features/User/Presentation/pages/user_info_pages.dart';
+import '../features/User/Presentation/pages/verification_pages.dart';
 import '../features/app/splash/splash_screen.dart';
 import '../features/User/Presentation/pages/login_page.dart';
 import '../features/chat/presentation/pages/single_chat_page.dart';
@@ -19,10 +21,10 @@ class OngenrateRoute {
       //   return MaterialPageBuilder(const ContactPage());
       case PageConst.singleChatPage:
         return MaterialPageBuilder(const SingleChatPage());
-      // case PageConst.userInfoPage:
-      //   return MaterialPageBuilder(const UserInfoPage());
-      // case PageConst.verificationPage:
-      //   return MaterialPageBuilder(const VerificationPage());
+      case PageConst.userInfoPage:
+        return MaterialPageBuilder(const UserInfoPage());
+      case PageConst.verificationPage:
+        return MaterialPageBuilder(VerificationPage());
       case PageConst.welcomePage:
         return MaterialPageBuilder(const WelcomePage());
       // case PageConst.loginPage:

@@ -1,10 +1,12 @@
 class PageConst {
   // * Auth Const
   static const String welcomePage = "/";
+  static const String verificationPage = "verificationPage";
+  static const String userInfoPage = "userInfoPage";
   static const String otpPage = "otpPage";
   static const String loginPage = "loginPage";
   static const String initialProfileSubmitPage = "initialProfileSubmitPage";
-
+  static const String ChatsPage = "ChatsPage";
   // * Home
   static const String homePage = "homePage";
 

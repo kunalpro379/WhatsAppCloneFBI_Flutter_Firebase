@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_FBI/features/app/splash/splash_screen.dart';
-// import 'package:whatsapp_FBI/features/chat/features/presentation/pages/single_chat_page.dart';
+import 'package:whatsapp_FBI/features/User/Presentation/pages/login_page.dart';
+import 'package:whatsapp_FBI/features/User/Presentation/pages/user_info_pages.dart';
+import 'package:whatsapp_FBI/features/User/Presentation/pages/verification_pages.dart';
 import 'package:whatsapp_FBI/common/route/routes.dart';
 import 'package:whatsapp_FBI/common/theme/dark_theme.dart';
 import 'package:whatsapp_FBI/common/theme/light_theme.dart';
 import 'package:whatsapp_FBI/features/app/welcome/WelcomePage.dart';
+import 'package:whatsapp_FBI/features/chat/presentation/pages/single_chat_page.dart';
+import 'package:whatsapp_FBI/features/chat/presentation/pages/chat_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-// import 'package:firebase_core/firebase_core.dart';
+void main() async {
+  // Ensure Flutter binding is initialized
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
-  runApp(MyApp());
+  // Initialize Firebase
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Run the app
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,8 +33,16 @@ class MyApp extends StatelessWidget {
       theme: lightTheme(),
       darkTheme: darkTheme(),
       themeMode: ThemeMode.system,
-      home: WelcomePage(), // Assuming SplashScreen is your initial screen
+      initialRoute: "/",
       onGenerateRoute: Routes.onGenerateRoute,
+      routes: {
+        "/": (context) => const WelcomePage(),
+        "loginPage": (context) => const LoginPage(),
+        "verificationPage": (context) => VerificationPage(),
+        "userInfoPage": (context) => const UserInfoPage(),
+        "ChatsPage": (context) => ChatPage(),
+        "singleChatPage": (context) => SingleChatPage(),
+      },
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_FBI/features/app/home/contactsPage.dart';
 import 'package:whatsapp_FBI/features/app/theme/style.dart';
 import 'package:whatsapp_FBI/features/calls/presentation/pages/calls_history_page.dart';
 import 'package:whatsapp_FBI/features/chat/presentation/pages/chat_page.dart';
@@ -161,7 +162,8 @@ class _HomePageState extends State<HomePage>
           ),
         ],
       ),
-      floatingActionButton: SwitchFloatingButtonTabIndex(_currentIndex),
+      floatingActionButton:
+          SwitchFloatingButtonTabIndex(_currentIndex, context),
     );
   }
 
@@ -172,12 +174,17 @@ class _HomePageState extends State<HomePage>
   }
 }
 
-SwitchFloatingButtonTabIndex(int index) {
+SwitchFloatingButtonTabIndex(int index, BuildContext context) {
   switch (index) {
     case 0:
       {
         return FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ContactPage()),
+            );
+          },
           backgroundColor: tabColor,
           child: const Icon(
             Icons.message,

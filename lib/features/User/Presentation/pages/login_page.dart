@@ -10,6 +10,7 @@ import 'package:whatsapp_FBI/features/User/Presentation/pages/verification_pages
 //import 'package:whatsapp_FBI/feature/auth/controller/auth_controller.dart';
 import '../../../../common/extension/custon_theme_extension.dart';
 import '../../../../common/widgets/custom_elevated_button.dart';
+import '../../../app/const/appconst.dart';
 import '../../auth/widgets/Custom_Icon.dart';
 import '../../auth/widgets/custom_text_field.dart';
 import '../../../../common/route/routes.dart';
@@ -58,12 +59,13 @@ class LoginPageState extends State<LoginPage> {
           message:
               'Please enter a valid mobile number. Phone number is too long.');
     } else {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => VerificationPage(),
-        ),
-      );
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => VerificationPage(),
+      //   ),
+      // );
+      Navigator.pushNamed(context, PageConst.verificationPage);
     }
 // authControllerProvider.read(context as Node).sendSmsCode(
 //       context: context,
