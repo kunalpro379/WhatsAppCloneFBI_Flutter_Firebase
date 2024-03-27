@@ -11,14 +11,18 @@ import 'package:whatsapp_FBI/features/chat/presentation/pages/chat_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
+// void main() async {
+//   // Ensure Flutter binding is initialized
+//   WidgetsFlutterBinding.ensureInitialized();
+
+//   // Initialize Firebase
+//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+//   // Run the app
+//   runApp(const MyApp());
+// }
 void main() async {
-  // Ensure Flutter binding is initialized
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // Initialize Firebase
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  // Run the app
+  await di.init();
   runApp(const MyApp());
 }
 
